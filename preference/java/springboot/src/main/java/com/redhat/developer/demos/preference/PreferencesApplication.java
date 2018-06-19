@@ -1,6 +1,5 @@
 package com.redhat.developer.demos.preference;
 
-import io.jaegertracing.Configuration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.client.RestTemplateBuilder;
@@ -19,10 +18,5 @@ public class PreferencesApplication extends WebMvcConfigurerAdapter {
 	@Bean
 	public RestTemplate restTemplate(RestTemplateBuilder restTemplateBuilder) {
 		return restTemplateBuilder.build();
-	}
-
-	@Bean
-	public io.opentracing.Tracer tracer() {
-		return Configuration.fromEnv().getTracer();
 	}
 }
